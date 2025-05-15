@@ -1,7 +1,7 @@
 
 let grass = new Image();
 
-grass.src="images/water.png"
+grass.src="images/poolleft.png"
 const CANVAS = document.getElementById('game_canvas');
 const CTX = CANVAS.getContext('2d', {
     powerPreference: "high-performance"
