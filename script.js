@@ -1,13 +1,12 @@
-
-let grass = new Image();
-
-grass.src="images/poolleft.png"
 const CANVAS = document.getElementById('game_canvas');
 const CTX = CANVAS.getContext('2d', {
     powerPreference: "high-performance"
   });
 
 
+let grass = new Image();
+
+grass.src="images/poolleft.png"
 
 
 
@@ -24,3 +23,4 @@ for (let i = 0;i < 1200;i+=60){
 console.log("Canvas initialized",grass);
 
 draw()
+grass.onload = function() {draw()}
