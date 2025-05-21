@@ -1,4 +1,5 @@
 import {CANVAS , CTX, FPS , MS_PER_FRAME,board,randint} from './globals.js';
+ 
 
 export class Entity{
     constructor(x,y,img,type) {

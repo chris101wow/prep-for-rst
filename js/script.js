@@ -14,6 +14,7 @@ document.addEventListener("contextmenu", (event) => {
 });
 
 let noodles = []
+let move_speed = 0
 let counter = 0
 let index = 0
 
@@ -37,6 +38,7 @@ function keypress(event){
       board[Player.y][Player.x] = 22
       for ( let i of sharks){
         check_dash(Player,i)
+        move_speed++
       }
     }
   }else if (event.keyCode == 65 && Player.x != 0){
@@ -46,6 +48,7 @@ function keypress(event){
       board[Player.y][Player.x] = 22
       for ( let i of sharks){
         check_dash(Player,i)
+        move_speed++
       }
     }
   }else if (event.keyCode == 83 && Player.y != 9){
@@ -55,6 +58,7 @@ function keypress(event){
       board[Player.y][Player.x] = 22
       for ( let i of sharks){
         check_dash(Player,i)
+        move_speed++
       }
     }
   }else if (event.keyCode == 68  && Player.x != 19){
@@ -64,6 +68,10 @@ function keypress(event){
       board[Player.y][Player.x] = 22
       for ( let i of sharks){
         check_dash(Player,i)
+        move_speed++
+        if(move_speed > 2){
+          console.log("hello")
+        }
       }
     }
   }
@@ -98,6 +106,7 @@ LoadImages()
 
 let frame_time = performance.now()
 function innit(){
+  
   for (let i  = 0; i < 10;i++){
     for (let j = 0 ;j <20;j++){
       if (board[i][j] == 0){
@@ -202,6 +211,7 @@ function update() {
       }
     }
     if(!randint(0,2)){
+          move_speed -= 1
       console.log("heresss")
       for(let i of shooters){
         noodles[index].recreate(i)
